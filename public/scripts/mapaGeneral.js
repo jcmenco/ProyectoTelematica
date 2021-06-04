@@ -37,11 +37,15 @@ function array(array,color,popup,icon) {
 function getXY(coordenada) {
     var split = coordenada.split("(");
     var data = split[1];
-    split = data.split(")");
-    var dir = split[0];
-    split = dir.split(",");
-    lat = parseFloat(split[0]);
-    lng = parseFloat(split[1]);
-    coordenada = L.latLng(lat,lng);
-    return coordenada
+    if (data == undefined) {
+        return L.latLng(0,0)
+    } else {
+        split = data.split(")");
+        var dir = split[0];
+        split = dir.split(",");
+        lat = parseFloat(split[0]);
+        lng = parseFloat(split[1]);
+        coordenada = L.latLng(lat,lng);
+        return coordenada
+    }
 }

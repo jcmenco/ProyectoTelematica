@@ -113,14 +113,14 @@ app.post('/usuarios', async (req, res) => {
                 req.session.username = user;
                 errorInicio = ""
                 u = true;
-                if (result[k].Rol == "médico") {
+                if (result[k].Rol == "medico") {
                     medico = true;
                 } else {
                     medico = false;
                 }
                 break
             } else {
-                errorInicio = "Error"
+                errorInicio = "Usuario o contraseña incorrectos"
                 console.log('oh no');
                 u = false;
             }
@@ -388,7 +388,8 @@ app.post('/buscar-casos-g', (req,res) =>{
             res.render('asistente-gestion.ejs',{
                 data: result,
                 info: "",
-                alert: alert
+                alert: alert,
+                estados: result
             });
         });
     } catch (error) {
@@ -534,8 +535,13 @@ app.post('/buscar-casos-m', (req,res) =>{
             }
             res.render('medico-home.ejs',{
                 data: result,
-                alert: alert
-            });
+                alert: "",
+                casosN: "",
+                casosT: "",
+                casosU: "",
+                casosC: "",
+                casosM: ""
+            })
         });
     } catch (error) {
         console.log('error');
@@ -606,7 +612,8 @@ app.post('/buscar-casos-m-r', (req,res) =>{
             }
             res.render('medico-pacientes.ejs',{
                 data: result,
-                alert: alert
+                alert: alert,
+                info: ""
             });
         });
     } catch (error) {

@@ -26,10 +26,10 @@ var trabajoMarker = L.marker([10.980074,-74.804948],{draggable: true, icon: myIc
 var xy1 = document.getElementById("residencia");
 var xy2 = document.getElementById("trabajo");
 
-/*
-residenciaMarker.setLatLng(getXY(xy1.value));
-trabajoMarker.setLatLng(getXY(xy2.value));
-*/
+if (xy1.value != "" && xy2.value != "") {
+    residenciaMarker.setLatLng(getXY(xy1.value));
+    trabajoMarker.setLatLng(getXY(xy2.value));
+}
 
 residenciaMarker.on("move",function(e){
     var residencia = residenciaMarker.getLatLng();

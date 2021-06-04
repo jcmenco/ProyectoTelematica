@@ -41,10 +41,10 @@ body{
             display: flex;
             align-items: center;
             .texto{
-                width: 50%;
+                width: 60%;
                 margin: 4em;
                 h1{
-                    font-size: 50px;
+                    font-size: 70px;
                     font-weight: 400;
                 }
                 p,a{
@@ -110,11 +110,11 @@ body{
             form{
                 display: grid;
                 place-items: center;
-                grid-template-rows: 100px 100px 1fr;
+                grid-template-rows: 100px 100px 50px 50px;
                 margin: 30px;
                 input{
                     margin: 20px 0;
-                    height: 50px;
+                    height: 40px;
                     width: 90%;
                     font-size: 18px;
                     font-weight: 100;
@@ -138,24 +138,19 @@ body{
     width: 100vw;
     .contenedor{
         margin: 4em 0;
-        margin-left: 4em;
-        h2{
-            font-size: 30px;
-            font-weight: 400;
-        }
+        display: flex;
+        justify-content: center;
         .grafica-1{
             width: 90%;
             height: 400px;
-            background-color: aquamarine;
         }
     }
     .pie{
         display: flex;
         justify-content: space-between;
         .grafica-pie{
-            width: 60%;
-            height: 600px;
-            background-color: aquamarine;
+            width: 33%;
+            height: 400px;
         }
         .titulo-pie{
             margin-left: 4em;
